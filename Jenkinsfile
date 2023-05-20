@@ -15,7 +15,7 @@ pipeline {
         }
          stage('deploy tomcat') {
             steps {
-                sh 'cp -r annaApps.war /home/ubuntu/apache-tomcat-10.1.9/webapps/'
+                sh 'sudo cp -r annaApps.war /home/ubuntu/apache-tomcat-10.1.9/webapps/'
             }
         }
     }
