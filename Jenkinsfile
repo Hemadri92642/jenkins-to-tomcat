@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('git clone') {
             steps {
                 echo 'Hello World'
                 git 'https://github.com/Hemadri92642/jenkins-to-tomcat.git'
@@ -13,6 +13,12 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+         stage('deploy tomcat') {
+            steps {
+                sh 'cp -r annaApps.war /home/ubuntu/apache-tomcat-10.1.9/webapps/'
+            }
+        }
     }
 }
+
 
